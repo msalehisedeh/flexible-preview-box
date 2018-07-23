@@ -1,0 +1,20 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+
+<div class="items-wrapper">
+  <flexible-preview-box
+    *ngFor="let preview of myPreviews"
+    [item]="preview"
+    [viewport]="preview.images"
+    [metadata]="presentationKeys"
+    [effects]="config"
+    (onselect)="onselect($event)"></flexible-preview-box>
+</div>
+
+<ul class="logger">
+  <li *ngFor="let x of events" [textContent]="x | json"></li>
+</ul>
