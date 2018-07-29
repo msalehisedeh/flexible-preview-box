@@ -57,7 +57,8 @@ export class CustomFavoriteComponent implements PipeComponent {
       const savedItems = JSON.parse(saved);
       const i = savedItems.indexOf(id);
 
-      localStorage.setItem("favorite-items", JSON.stringify(savedItems.splice(i, i+1)));
+      savedItems.splice(i, 1);
+      localStorage.setItem("favorite-items", JSON.stringify(savedItems));
     }
   }
   private getItem(id) {
