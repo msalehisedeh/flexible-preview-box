@@ -2,8 +2,14 @@
 
 Have you ever wanted a preview box that can display anything in different ways on different application flows just by toggling metadata rules for each flow? Flexible preview box is built with Angular 4+ code and can display images or videos with relative data or action links above or below its view port. links or any content display is controlled and formatted by the metadat rules you provide. You can write your own formatters and achieve what is needed for a specific cituation or use existing formatter from into-pipes library.  Flexible preview box can display any data for any purpose. For example: product display, user info display, video teaser display, ..., possibilities are endless.
 
+**NOTE:** Starting with version 1.1.0 this library is compatible with Angular 6+.
+
+Please send your requests or comments through the link provided below:
 
 [Live Demo](https://flexible-preview-box.stackblitz.io) | [Source code](https://github.com/msalehisedeh/flexible-preview-box) | [Comments/Requests](https://github.com/msalehisedeh/flexible-preview-box/issues)
+
+# Version 1.1.0
+Updated libraries to become compatible with Angular 6+. 
 
 
 # Version 1.0.0
