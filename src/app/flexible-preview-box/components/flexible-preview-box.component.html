@@ -1,5 +1,5 @@
 <div class="above-viewport" [style.max-width]="effects.width ? (effects.width + 'px') : 'auto'">
-    <div *ngFor="let row of aboveData" 
+    <div *ngFor="let row of aboveData; let i = index" 
         class="box-row"
         [style.margin-top]="row.spacing ? (row.spacing + 'px') : '0'"
         [class.left]="row.side === 'left'"
@@ -50,7 +50,7 @@
     </video>
 </div>
 <div class="below-viewport" [style.max-width]="effects.width ? (effects.width + 'px') : 'auto'">
-    <div *ngFor="let row of belowData" 
+    <div *ngFor="let row of belowData; let i = index" 
         class="box-row"
         [style.margin-top]="row.spacing ? (row.spacing + 'px') : '0'"
         [class.left]="row.side === 'left'"
