@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ComponentPool } from 'into-pipes';
+import { ComponentPool } from '@sedeh/into-pipes';
 
 import { CustomFavoriteComponent } from './formatters/favorite-formatter';
 import { CustomCartComponent } from './formatters/cart-formatter';

@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { PipeComponent } from 'into-pipes';
+import { PipeComponent } from '@sedeh/into-pipes';
  
 @Component({
     selector: 'cart-component',

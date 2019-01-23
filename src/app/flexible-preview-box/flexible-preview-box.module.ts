@@ -1,6 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IntoPipeModule } from 'into-pipes';
+import { IntoPipeModule } from '@sedeh/into-pipes';
 
 import { FlexiblePreviewBoxComponent } from './components/flexible-preview-box.component';
 
