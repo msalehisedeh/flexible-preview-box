@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FlexiblePreviewBoxModule } from './flexible-preview-box/flexible-preview-box.module';
+import { WizardStorageModule } from '@sedeh/wizard-storage';
 
 import { CustomFavoriteComponent } from './formatters/favorite-formatter';
 import { CustomCartComponent } from './formatters/cart-formatter';
@@ -18,6 +19,7 @@ import { CustomInventoryComponent } from './formatters/inventory-formatter';
   ],
   imports: [
     BrowserModule,
+    WizardStorageModule,
     FlexiblePreviewBoxModule
   ],
   entryComponents: [

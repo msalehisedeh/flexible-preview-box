@@ -8,9 +8,26 @@
   padding: 0;
   border-radius: 5px;
   margin: 5px;
-
+  &:focus {
+    border-color: #0ba;
+  }
+  &:hover {
+    border-color: #800080;
+    box-shadow: 1px 1px 11px #800080;
+  }
   ::ng-deep .rating {
     color: red;
+  }
+
+  ::ng-deep share-component {
+    .off-screen {
+      display: block;
+      float: left;
+      height: 0;
+      overflow: hidden;
+      text-indent: -99999px;
+      width: 0;
+    }
   }
 
   .off-screen {
@@ -23,9 +40,6 @@
   }
 
   .box-row {
-    display: flex;
-    width: 100%;
-
     .label {
       float: left;
       font-weight: bold;
@@ -55,7 +69,6 @@
     }
     &.side-by-side {
       max-width: 250px;
-      width: inherit;
       display: table;
       float: right;
       margin: 0 5px;
@@ -70,7 +83,7 @@
     box-sizing: border-box;
     border-top: 1px solid #bcd;
     border-bottom: 1px solid #bcd;
-    min-height: 150px;
+    min-height: 100px;
     overflow: hidden;
     position: relative;
     margin: 0 auto;
@@ -80,6 +93,7 @@
     img.content {
       margin: auto;
       display: table;
+      pointer-events: none;
     }
     video.content {
       margin: auto;
@@ -101,6 +115,15 @@
     padding: 5px;
     box-sizing: border-box;
   }
+  @media screen and (min-width: 600px) {
+  }
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    .viewport, .below-viewport, .above-viewport {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
 }
 .clearblock {
   clear: both;
@@ -110,10 +133,4 @@
   padding: 0;
   margin: 0;
 }
-:host:focus {
-  border-color: #0ba;
-}
-:host:hover {
-  border-color: #800080;
-  box-shadow: 1px 1px 11px #800080;
-}
+

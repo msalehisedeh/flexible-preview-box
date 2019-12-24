@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { PipeComponent } from '@sedeh/into-pipes';
- 
+import { WizardStorageService } from '@sedeh/wizard-storage';
+
 @Component({
     selector: 'cart-component',
     template: `
@@ -23,6 +24,8 @@ export class CustomCartComponent implements PipeComponent {
   @Output("onIntoComponentChange")
   onIntoComponentChange = new EventEmitter();
  
+  constructor(private storage: WizardStorageService) {}
+
   transform(source: any, item:any, args: any[]) {
       this.source = source;
       this.item = item;
@@ -37,34 +40,34 @@ export class CustomCartComponent implements PipeComponent {
     }
   }
   private addItem(id) {
-    const saved = localStorage.getItem("cart-items");
+    const saved = this.storage.local.getItem("cart-items");
     if (saved) {
-      const savedItems = JSON.parse(saved);
-      savedItems.push(id);
-      localStorage.setItem("cart-items", JSON.stringify(savedItems));
+      saved.push(id);
+      this.storage.local.setItem("cart-items", saved);
     } else {
-      localStorage.setItem("cart-items", JSON.stringify([id]));
+      this.storage.local.setItem("cart-items", [id]);
     }
   }
   private removeItem(id) {
-    const saved = localStorage.getItem("cart-items");
+    const saved = this.storage.local.getItem("cart-items");
     if (saved) {
-      const savedItems = JSON.parse(saved);
-      const i = savedItems.indexOf(id);
+      if (saved.length > 1) {
+        const i = saved.indexOf(id);
 
-      savedItems.splice(i, 1);
-      localStorage.setItem("cart-items", JSON.stringify(savedItems));
+        saved.splice(i, 1);
+      } else {
+        this.storage.local.setItem("cart-items", saved);
+      }
     }
   }
   private getItem(id) {
-    const saved = localStorage.getItem("cart-items");
+    const saved = this.storage.local.getItem("cart-items");
     let found = null;
 
     if (saved) {
-      const savedItems: any[] = JSON.parse(saved);
-      const i = savedItems.indexOf(id);
+      const i = saved.indexOf(id);
 
-      found = i < 0 ? null : savedItems[i];
+      found = i < 0 ? null : saved[i];
     }
     return found;
   }
@@ -76,6 +79,9 @@ export class CustomCartComponent implements PipeComponent {
       if (!existing) {
         this.addItem(this.item.catalog_number)
         this.onIntoComponentChange.emit({
+          id: this.id,
+          name: this.name,
+          value: this.source,
           action: "add",
           type: "cart",
           item: this.item
@@ -84,6 +90,9 @@ export class CustomCartComponent implements PipeComponent {
     } else {
       this.removeItem(this.item.catalog_number);
       this.onIntoComponentChange.emit({
+        id: this.id,
+        name: this.name,
+        value: this.source,
         action: "remove",
         type: "cart",
         item: this.item

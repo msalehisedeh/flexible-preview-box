@@ -12,6 +12,8 @@
     [viewport]="preview.images"
     [metadata]="presentationKeys"
     [effects]="config"
+    [magnificationFactor]="4"
+    (onaction)="onaction($event)"
     (onselect)="onselect($event)"></flexible-preview-box>
 </div>
 

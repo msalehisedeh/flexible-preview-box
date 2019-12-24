@@ -1,4 +1,5 @@
-<div class="above-viewport" [style.max-width]="effects.width ? (effects.width + 'px') : 'auto'">
+<div class="above-viewport" 
+    [style.max-width]="effects.width ? (effects.width + 'px') : 'auto'">
     <div *ngFor="let row of aboveData; let i = index" 
         class="box-row"
         [style.margin-top]="row.spacing ? (row.spacing + 'px') : '0'"
@@ -7,7 +8,9 @@
         [class.center]="row.side === 'center'"
         [class.emphasize]="row.emphasize"
         [class.side-by-side]="row.sidebyside">
-        <span class="label" [class.off-screen]="row.hidelabel" [textContent]="row.value"></span>
+        <span class="label" 
+            [class.off-screen]="row.hidelabel" 
+            [textContent]="row.value"></span>
         <span class="value" [intoName]="row.value"
             [intoId]="row.key + '-' + i"
             [into]="row.format"
@@ -21,29 +24,38 @@
     class="viewport" 
     tabindex="0"
     [title]="item.name"
-    [style.width]="effects.width + 'px'" 
-    [style.height]="effects.height + 'px'"
+    [style.width]="effects.width ? (effects.width + 'px') : null" 
+    [style.height]="effects.height ? (effects.height + 'px') : null" 
+    (focus)="updateControls($event)"
+    (blur)="resetControls($event)"
     (keyup)="keyup($event)"
     (click)="selectItem($event)"
+    (touchstart)="touchstart($event)"
+    (touchmove)="touchmove($event)"
+    (touchend)="touchend($event)"
     (mouseout)="hoverOut($event)"
     (mouseover)="hoverOver($event)"
     (mousemove)="hoverViewPort($event)">
     <img  class="content" 
             [src]="viewport.src.small" 
             *ngIf="viewport.type === 'image'" />
-    <img  class="hover" #largeImage
-            [style.width]="(effects.width*2) + 'px'"
-            [style.height]="(effects.height*2) + 'px'"
+    <img  class="hover" #largeImage aria-hidden="true"
             [src]="viewport.src.large" 
             *ngIf="effects.zoomOnHover" />
     <video  
         class="content" #video
-        [style.width]="effects.width + 'px'" 
-        [style.height]="effects.height + 'px'"
-        (play)="videoPlayed(video.currentTime)"
-        (pause)="videoPaused(video.currentTime)"
-        (ended)="videoEnded(video.currentTime)"
-        *ngIf="viewport.type === 'video'" controls>
+        [style.width]="effects.width ? (effects.width + 'px') : null" 
+        [style.height]="effects.height ? (effects.height + 'px') : null" 
+        [attr.poster]="viewport.poster ? viewport.poster : null"
+        (mouseenter)="updateControls($event)"
+        (mouseleave)="resetControls($event)"
+        (play)="videoEvent($event)"
+        (pause)="videoEvent($event)"
+        (ended)="videoEvent($event)"
+        (seeked)="videoEvent($event)"
+        (error)="videoEvent($event)"
+        (fullscreenchange)="videoEvent($event)"
+        *ngIf="viewport.type === 'video'">
         <source [src]="viewport.src.mp4" type="video/mp4">
         <source [src]="viewport.src.webm" type="video/webm">
         <source [src]="viewport.src.egg" type="video/ogg">

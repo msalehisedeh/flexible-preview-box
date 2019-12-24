@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { PipeComponent } from '@sedeh/into-pipes';
+import { WizardStorageService } from '@sedeh/wizard-storage';
  
 @Component({
     selector: 'favorite-component',
@@ -27,6 +28,8 @@ export class CustomFavoriteComponent implements PipeComponent {
 
   @Output("onIntoComponentChange")
   onIntoComponentChange = new EventEmitter();
+
+  constructor(private storage: WizardStorageService) {}
  
   transform(source: any, item:any, args: any[]) {
       this.source = source;
@@ -34,60 +37,74 @@ export class CustomFavoriteComponent implements PipeComponent {
       const existing = this.getItem(this.item.catalog_number);
       this.selected = (existing !== null);
   }
-  keyup(event) {
+  keyup(event: any) {
     const code = event.which;
 
     if (code === 13) {
       event.target.click();
     }
   }
-  private addItem(id) {
-    const saved = localStorage.getItem("favorite-items");
+  private addItem(id: string) {
+    const saved = this.storage.local.getItem("favorite-items");
     if (saved) {
-      const savedItems = JSON.parse(saved);
-      savedItems.push(id);
-      localStorage.setItem("favorite-items", JSON.stringify(savedItems));
+      saved.push(id);
+      this.storage.local.setItem("favorite-items", saved);
     } else {
-      localStorage.setItem("favorite-items", JSON.stringify([id]));
+      this.storage.local.setItem("favorite-items", [id]);
     }
   }
-  private removeItem(id) {
-    const saved = localStorage.getItem("favorite-items");
+  private removeItem(id: string) {
+    const saved = this.storage.local.getItem("favorite-items");
     if (saved) {
-      const savedItems = JSON.parse(saved);
-      const i = savedItems.indexOf(id);
-
-      savedItems.splice(i, 1);
-      localStorage.setItem("favorite-items", JSON.stringify(savedItems));
+      if (saved.length > 1) {
+        if (saved.length > 1) {
+          const i = saved.indexOf(id);
+          saved.splice(i, 1);
+          this.storage.local.setItem("favorite-items", saved);
+        } else {
+        this.storage.local.setItem("favorite-items", []);
+       }
+      } else {
+        this.storage.local.setItem("favorite-items", []);
+      }
     }
   }
-  private getItem(id) {
-    const saved = localStorage.getItem("favorite-items");
+  private getItem(id: string) {
+    const saved = this.storage.local.getItem("favorite-items");
     let found = null;
 
     if (saved) {
-      const savedItems: any[] = JSON.parse(saved);
-      const i = savedItems.indexOf(id);
-
-      found = i < 0 ? null : savedItems[i];
+      const i = saved.indexOf(id);
+      found = i < 0 ? null : saved[i];
     }
     return found;
   }
-  toggle(event) {
+  toggle(event: any) {
     this.selected = !this.selected;
 
     if (this.selected) {
       const existing = this.getItem(this.item.catalog_number);
       if (!existing) {
         this.addItem(this.item.catalog_number)
+        this.onIntoComponentChange.emit({
+          id: this.id,
+          name: this.name,
+          value: this.source,
+          action: "favotite",
+          type: "add",
+          item: this.item
+        });
       }
     } else {
       this.removeItem(this.item.catalog_number);
+      this.onIntoComponentChange.emit({
+        id: this.id,
+        name: this.name,
+        value: this.source,
+        action: "favotite",
+        type: "remove",
+        item: this.item
+      });
     }
-    this.onIntoComponentChange.emit({
-      item: this.item,
-      selected: this.selected,
-      action: "favotite"
-    });
   }
 }

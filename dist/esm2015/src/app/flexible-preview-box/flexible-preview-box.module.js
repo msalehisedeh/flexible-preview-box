@@ -1,28 +1,25 @@
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
- */
+import * as tslib_1 from "tslib";
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IntoPipeModule } from '@sedeh/into-pipes';
 import { FlexiblePreviewBoxComponent } from './components/flexible-preview-box.component';
-export class FlexiblePreviewBoxModule {
-}
-FlexiblePreviewBoxModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                    IntoPipeModule
-                ],
-                declarations: [
-                    FlexiblePreviewBoxComponent
-                ],
-                exports: [
-                    FlexiblePreviewBoxComponent
-                ],
-                entryComponents: [],
-                schemas: [CUSTOM_ELEMENTS_SCHEMA]
-            },] }
-];
-
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZmxleGlibGUtcHJldmlldy1ib3gubW9kdWxlLmpzIiwic291cmNlUm9vdCI6Im5nOi8vQHNlZGVoL2ZsZXhpYmxlLXByZXZpZXctYm94LyIsInNvdXJjZXMiOlsic3JjL2FwcC9mbGV4aWJsZS1wcmV2aWV3LWJveC9mbGV4aWJsZS1wcmV2aWV3LWJveC5tb2R1bGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUFBLE9BQU8sRUFBRSxRQUFRLEVBQUUsc0JBQXNCLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFDakUsT0FBTyxFQUFFLFlBQVksRUFBRSxNQUFNLGlCQUFpQixDQUFDO0FBQy9DLE9BQU8sRUFBRSxjQUFjLEVBQUUsTUFBTSxtQkFBbUIsQ0FBQztBQUVuRCxPQUFPLEVBQUUsMkJBQTJCLEVBQUUsTUFBTSw2Q0FBNkMsQ0FBQztBQWtCMUYsTUFBTTs7O1lBaEJMLFFBQVEsU0FBQztnQkFDUixPQUFPLEVBQUU7b0JBQ1AsWUFBWTtvQkFDWixjQUFjO2lCQUNmO2dCQUNELFlBQVksRUFBRTtvQkFDWiwyQkFBMkI7aUJBQzVCO2dCQUNELE9BQU8sRUFBRTtvQkFDUCwyQkFBMkI7aUJBQzVCO2dCQUNELGVBQWUsRUFBRSxFQUNoQjtnQkFDRCxPQUFPLEVBQUUsQ0FBQyxzQkFBc0IsQ0FBQzthQUNsQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IE5nTW9kdWxlLCBDVVNUT01fRUxFTUVOVFNfU0NIRU1BIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XHJcbmltcG9ydCB7IENvbW1vbk1vZHVsZSB9IGZyb20gJ0Bhbmd1bGFyL2NvbW1vbic7XHJcbmltcG9ydCB7IEludG9QaXBlTW9kdWxlIH0gZnJvbSAnQHNlZGVoL2ludG8tcGlwZXMnO1xyXG5cclxuaW1wb3J0IHsgRmxleGlibGVQcmV2aWV3Qm94Q29tcG9uZW50IH0gZnJvbSAnLi9jb21wb25lbnRzL2ZsZXhpYmxlLXByZXZpZXctYm94LmNvbXBvbmVudCc7XHJcblxyXG5ATmdNb2R1bGUoe1xyXG4gIGltcG9ydHM6IFtcclxuICAgIENvbW1vbk1vZHVsZSxcclxuICAgIEludG9QaXBlTW9kdWxlXHJcbiAgXSxcclxuICBkZWNsYXJhdGlvbnM6IFtcclxuICAgIEZsZXhpYmxlUHJldmlld0JveENvbXBvbmVudFxyXG4gIF0sXHJcbiAgZXhwb3J0czogW1xyXG4gICAgRmxleGlibGVQcmV2aWV3Qm94Q29tcG9uZW50XHJcbiAgXSxcclxuICBlbnRyeUNvbXBvbmVudHM6IFtcclxuICBdLFxyXG4gIHNjaGVtYXM6IFtDVVNUT01fRUxFTUVOVFNfU0NIRU1BXVxyXG59KVxyXG5cclxuZXhwb3J0IGNsYXNzIEZsZXhpYmxlUHJldmlld0JveE1vZHVsZSB7fVxyXG4iXX0=
+let FlexiblePreviewBoxModule = class FlexiblePreviewBoxModule {
+};
+FlexiblePreviewBoxModule = tslib_1.__decorate([
+    NgModule({
+        imports: [
+            CommonModule,
+            IntoPipeModule
+        ],
+        declarations: [
+            FlexiblePreviewBoxComponent
+        ],
+        exports: [
+            FlexiblePreviewBoxComponent
+        ],
+        entryComponents: [],
+        schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    })
+], FlexiblePreviewBoxModule);
+export { FlexiblePreviewBoxModule };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZmxleGlibGUtcHJldmlldy1ib3gubW9kdWxlLmpzIiwic291cmNlUm9vdCI6Im5nOi8vQHNlZGVoL2ZsZXhpYmxlLXByZXZpZXctYm94LyIsInNvdXJjZXMiOlsic3JjL2FwcC9mbGV4aWJsZS1wcmV2aWV3LWJveC9mbGV4aWJsZS1wcmV2aWV3LWJveC5tb2R1bGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLE9BQU8sRUFBRSxRQUFRLEVBQUUsc0JBQXNCLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFDakUsT0FBTyxFQUFFLFlBQVksRUFBRSxNQUFNLGlCQUFpQixDQUFDO0FBQy9DLE9BQU8sRUFBRSxjQUFjLEVBQUUsTUFBTSxtQkFBbUIsQ0FBQztBQUVuRCxPQUFPLEVBQUUsMkJBQTJCLEVBQUUsTUFBTSw2Q0FBNkMsQ0FBQztBQWtCMUYsSUFBYSx3QkFBd0IsR0FBckMsTUFBYSx3QkFBd0I7Q0FBRyxDQUFBO0FBQTNCLHdCQUF3QjtJQWhCcEMsUUFBUSxDQUFDO1FBQ1IsT0FBTyxFQUFFO1lBQ1AsWUFBWTtZQUNaLGNBQWM7U0FDZjtRQUNELFlBQVksRUFBRTtZQUNaLDJCQUEyQjtTQUM1QjtRQUNELE9BQU8sRUFBRTtZQUNQLDJCQUEyQjtTQUM1QjtRQUNELGVBQWUsRUFBRSxFQUNoQjtRQUNELE9BQU8sRUFBRSxDQUFDLHNCQUFzQixDQUFDO0tBQ2xDLENBQUM7R0FFVyx3QkFBd0IsQ0FBRztTQUEzQix3QkFBd0IiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBOZ01vZHVsZSwgQ1VTVE9NX0VMRU1FTlRTX1NDSEVNQSB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xyXG5pbXBvcnQgeyBDb21tb25Nb2R1bGUgfSBmcm9tICdAYW5ndWxhci9jb21tb24nO1xyXG5pbXBvcnQgeyBJbnRvUGlwZU1vZHVsZSB9IGZyb20gJ0BzZWRlaC9pbnRvLXBpcGVzJztcclxuXHJcbmltcG9ydCB7IEZsZXhpYmxlUHJldmlld0JveENvbXBvbmVudCB9IGZyb20gJy4vY29tcG9uZW50cy9mbGV4aWJsZS1wcmV2aWV3LWJveC5jb21wb25lbnQnO1xyXG5cclxuQE5nTW9kdWxlKHtcclxuICBpbXBvcnRzOiBbXHJcbiAgICBDb21tb25Nb2R1bGUsXHJcbiAgICBJbnRvUGlwZU1vZHVsZVxyXG4gIF0sXHJcbiAgZGVjbGFyYXRpb25zOiBbXHJcbiAgICBGbGV4aWJsZVByZXZpZXdCb3hDb21wb25lbnRcclxuICBdLFxyXG4gIGV4cG9ydHM6IFtcclxuICAgIEZsZXhpYmxlUHJldmlld0JveENvbXBvbmVudFxyXG4gIF0sXHJcbiAgZW50cnlDb21wb25lbnRzOiBbXHJcbiAgXSxcclxuICBzY2hlbWFzOiBbQ1VTVE9NX0VMRU1FTlRTX1NDSEVNQV1cclxufSlcclxuXHJcbmV4cG9ydCBjbGFzcyBGbGV4aWJsZVByZXZpZXdCb3hNb2R1bGUge31cclxuIl19

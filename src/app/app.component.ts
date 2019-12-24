@@ -14,7 +14,27 @@ export class AppComponent {
   title = 'Flexible preview Box';
   events: string[] = [];
 
-  myPreviews= [{
+  myPreviews= [
+  {
+    price: 6.35,
+    name: "priceless bettyy",
+    catalog_number: 'j00000po8768',
+    description: 'sdf sfd sdfds  sdf ssd fdfsf sfsd fsd fsdfsf sdfs',
+    inventory: 4,
+    images: {
+      type: 'video',
+      poster: 'https://www.skandium.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/s/n/snaps-high.jpg',
+      src: {
+        egg: "https://theorganiccompany.dk/new/wp-content/uploads/2017/06/Long_Apron_The_Organic_Company_lowres.mp4",
+        mp4: "https://theorganiccompany.dk/new/wp-content/uploads/2017/06/Long_Apron_The_Organic_Company_lowres.mp4",
+        webm: "https://theorganiccompany.dk/new/wp-content/uploads/2017/06/Long_Apron_The_Organic_Company_lowres.mp4"
+      }
+    },
+    favorites: false,
+    reviews: 1.5,
+    cart: 'cart'
+  },
+  {
     price: 2.95,
     name: "evil apron pretty",
     catalog_number: 'k24234jh6446',
@@ -30,23 +50,6 @@ export class AppComponent {
     favorites: false,
     reviews: 3.5,
     cart: 'cart'
-  },
-  {
-    price: 6.35,
-    name: "priceless bettyy",
-    catalog_number: 'j00000po8768',
-    description: 'sdf sfd sdfds  sdf ssd fdfsf sfsd fsd fsdfsf sdfs',
-    inventory: 4,
-    images: {
-      type: 'image',
-      src: {
-        small: "https://rlv.zcache.com/make_your_own_grill_master_bbq_apron_for_men_beige-r111e4e5082054a6b9c63753ad50ecc27_v9isa_8byvr_140.jpg",
-        large: "https://rlv.zcache.com/make_your_own_grill_master_bbq_apron_for_men_beige-r111e4e5082054a6b9c63753ad50ecc27_v9isa_8byvr_140.jpg"
-      }
-    },
-    favorites: false,
-    reviews: 1.5,
-    cart: 'cart'
   }
 
   ];
@@ -57,7 +60,8 @@ export class AppComponent {
       hidelabel: true,
       present: true,
       position: 'above',
-      side: 'right',
+      side: 'left',
+      rawContent: (item: any) => item.reviews,
       format: 'rating'
     },
     {
@@ -81,6 +85,18 @@ export class AppComponent {
       sidebyside: true,
       side: 'right',
       format:'cart'
+    },
+    {
+      key: 'share',
+      value: 'Share item',
+      present: true,
+      hidelabel: true,
+      spacing: "5",
+      position: 'above',
+      sidebyside: true,
+      side: 'right',
+      rawContent: (item: any) => 'http://myside.com/?ref-id=' + item.id,
+      format:'share:facebook:linkedin:google:twitter'
     },
     {
       key: 'price',
@@ -124,7 +140,7 @@ export class AppComponent {
     zoomOnHover: true,
     hovereffect: true,
     width: "250",
-    height: "150"
+    height: "140"
   }
 
   constructor(private pool:ComponentPool) {
@@ -133,7 +149,10 @@ export class AppComponent {
     this.pool.registerComponent("inventory", CustomInventoryComponent);
   }
 
-  onselect(event) {
+  onaction(event: any) {
+    this.events.push(event);
+  }
+  onselect(event: any) {
     this.events.push(event);
   }
 }

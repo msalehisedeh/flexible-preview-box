@@ -1,25 +1,42 @@
-import { OnInit, OnChanges, EventEmitter } from '@angular/core';
-export declare class FlexiblePreviewBoxComponent implements OnInit, OnChanges {
+import { OnInit, EventEmitter } from '@angular/core';
+export interface ViewPort {
+    type: string;
+    poster?: string;
+    src: {
+        small?: string;
+        large?: string;
+        egg?: string;
+        mp4?: string;
+        webm?: string;
+    };
+}
+export declare class FlexiblePreviewBoxComponent implements OnInit {
     aboveData: any[];
     belowData: any[];
     private largeImage;
-    onselect: EventEmitter<{}>;
+    private video;
+    onselect: EventEmitter<any>;
+    onaction: EventEmitter<any>;
     item: any;
-    viewport: any;
+    viewport: ViewPort;
     metadata: any[];
     effects: any;
-    constructor();
+    enableMobileMagnification: boolean;
+    magnificationFactor: number;
     ngOnInit(): void;
-    ngOnChanges(changes: any): void;
-    private itemValue(item, hpath);
-    rowContent(row: any): string;
+    private itemValue;
+    rowContent(row: any): any;
+    touchstart(event: any): void;
+    touchmove(event: any): void;
+    touchend(event: any): void;
     hoverOver(event: any): void;
     hoverOut(event: any): void;
     hoverViewPort(event: any): void;
+    updateControls(event: any): void;
+    resetControls(event: any): void;
+    private isPlaying;
     keyup(event: any): void;
     selectItem(event: any): void;
-    videoPlayed(trackingTime: any): void;
-    videoPaused(trackingTime: any): void;
-    videoEnded(trackingTime: any): void;
+    videoEvent(event: any): void;
     onComponentChange(event: any): void;
 }
