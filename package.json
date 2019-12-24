@@ -1,6 +1,6 @@
 {
   "name": "@sedeh/flexible-preview-box",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -27,7 +27,7 @@
   ],
   "dependencies": {
     "font-awesome": "^4.7.0",
-    "@sedeh/into-pipes": "^2.0.0"
+    "@sedeh/into-pipes": "^3.0.0"
   },
   "devDependencies": {
     "@angular/common": "~8.2.14",
