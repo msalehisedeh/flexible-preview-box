@@ -218,4 +218,7 @@ export class FlexiblePreviewBoxComponent implements OnInit {
       this.onaction.emit({action: event.name, type: event.item, item: this.item});
     }
   }
+  defaultAction() {
+    // do nothing
+  }
 }

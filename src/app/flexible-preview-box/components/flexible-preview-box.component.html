@@ -6,16 +6,22 @@
         [class.left]="row.side === 'left'"
         [class.right]="row.side === 'right'"
         [class.center]="row.side === 'center'"
+        [class.link]="row.rawContent !== undefined"
         [class.emphasize]="row.emphasize"
-        [class.side-by-side]="row.sidebyside">
+        [class.side-by-side]="row.sidebyside"
+        [attr.role]="row.rawContent ? 'link' : ''"
+        [tabIndex]="row.rawContent ? 0 : -1"
+        (click)="row.rawContent ? row.rawContent(row) : defaultAction()">
         <span class="label" 
             [class.off-screen]="row.hidelabel" 
             [textContent]="row.value"></span>
-        <span class="value" [intoName]="row.value"
+        <span class="value" 
+            [intoName]="row.value"
             [intoId]="row.key + '-' + i"
             [into]="row.format"
             [intoData]="item"
             [rawContent]="rowContent(row)"
+            [tabIndex]="row.rawContent ? 0 : -1"
             [onComponentChange]="onComponentChange.bind(this)"></span>
     </div>
     <div class="clearblock"></div>
@@ -68,10 +74,16 @@
         [class.left]="row.side === 'left'"
         [class.right]="row.side === 'right'"
         [class.center]="row.side === 'center'"
+        [class.link]="row.rawContent !== undefined"
         [class.emphasize]="row.emphasize"
-        [class.side-by-side]="row.sidebyside">
+        [class.side-by-side]="row.sidebyside"
+        [attr.role]="row.rawContent ? 'link' : ''"
+        [tabIndex]="row.rawContent ? 0 : -1"
+        (click)="row.rawContent ? row.rawContent(row) : defaultAction()">
         <span class="label" [class.off-screen]="row.hidelabel" [textContent]="row.value"></span>
-        <span class="value" [intoName]="row.value"
+        <span class="value" 
+            [intoName]="row.value"
+            [class.full-width]="row.hidelabel"
             [intoId]="row.key + '-' + i"
             [into]="row.format"
             [intoData]="item"

@@ -39,4 +39,5 @@ export declare class FlexiblePreviewBoxComponent implements OnInit {
     selectItem(event: any): void;
     videoEvent(event: any): void;
     onComponentChange(event: any): void;
+    defaultAction(): void;
 }

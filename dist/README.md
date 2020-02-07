@@ -104,6 +104,7 @@ config = {
       value: 'Item #',
       present: true,
       spacing: "10",
+      action: (item: any) => {},
       position: 'below',
       side: 'center'
     },
@@ -180,6 +181,7 @@ OR
 |emphasize        | Display in a large and bold fashion.                                                  |
 |spacing          | Top margin on the displayed row.                                                      |
 |hidelabel        | Do not show the label.                                                                |
+|action           | on click event. if defined, section will behave like a link.                          |
 |rawContent       | function to generate content for rawContent of pipe directive from item. If not supplied, key attribute will be used to drill down in item attributes to generate the content. |
 |format           | Format the value using **into-pipes** library.                                        |
 
@@ -208,6 +210,7 @@ You can register to receive the following events:
 
 | Version | Description                                                                                   |
 |---------|-----------------------------------------------------------------------------------------------|
+| 2.0.2   | Added ability to associate an action with any one of the sections above and below the view.   |
 | 2.0.0   | Upgradfed to angular 8.                                                                       |
 | 1.2.10  | Fixed the touch move magnification on mobile. Also added flag to disable the touch move if a click action is attached to the view port. |
 | 1.2.9   | Updated style to display correctly on mobile. added touch move event handling for managing image zoom movement in view port of the preview box. |

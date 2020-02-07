@@ -47,6 +47,13 @@
     }
     .value {
       float: left;
+      &.full-width {
+        display: block;
+        width: 100%;
+      }
+    }
+    &.link {
+      cursor: pointer;
     }
     &.left {
       text-align: left;
