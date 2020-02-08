@@ -210,7 +210,7 @@ You can register to receive the following events:
 
 | Version | Description                                                                                   |
 |---------|-----------------------------------------------------------------------------------------------|
-| 2.0.3   | Added ability to associate an action with any one of the sections above and below the view.   |
+| 2.0.4   | Added ability to associate an action with any one of the sections above and below the view.   |
 | 2.0.0   | Upgradfed to angular 8.                                                                       |
 | 1.2.10  | Fixed the touch move magnification on mobile. Also added flag to disable the touch move if a click action is attached to the view port. |
 | 1.2.9   | Updated style to display correctly on mobile. added touch move event handling for managing image zoom movement in view port of the preview box. |

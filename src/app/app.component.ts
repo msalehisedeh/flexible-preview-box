@@ -147,6 +147,15 @@ export class AppComponent {
     this.pool.registerComponent("favorite", CustomFavoriteComponent);
     this.pool.registerComponent("cart", CustomCartComponent);
     this.pool.registerComponent("inventory", CustomInventoryComponent);
+    this.presentationKeys.map(
+      (presentation: any) => {
+        if (presentation.key === 'sku') {
+          presentation.action = (item: any) => {
+            // do something here
+          }
+        }
+      }
+    );
   }
 
   onaction(event: any) {
