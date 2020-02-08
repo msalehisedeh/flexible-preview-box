@@ -8,7 +8,7 @@ Have you ever wanted a preview box that can display anything in different ways o
 
 Please send your requests or comments through the link provided below:
 
-[Live Demo](https://flexible-preview-box.stackblitz.io) | [Source code](https://github.com/msalehisedeh/flexible-preview-box/tree/master/src/app) | [Comments/Requests](https://github.com/msalehisedeh/flexible-preview-box/issues)
+[Live Demo](https://flexible-preview-box.stackblitz.io) | [Comments/Requests](https://github.com/msalehisedeh/flexible-preview-box/issues)
 
 ```
 DEPENDENCIES: 
@@ -210,7 +210,7 @@ You can register to receive the following events:
 
 | Version | Description                                                                                   |
 |---------|-----------------------------------------------------------------------------------------------|
-| 2.0.2   | Added ability to associate an action with any one of the sections above and below the view.   |
+| 2.0.3   | Added ability to associate an action with any one of the sections above and below the view.   |
 | 2.0.0   | Upgradfed to angular 8.                                                                       |
 | 1.2.10  | Fixed the touch move magnification on mobile. Also added flag to disable the touch move if a click action is attached to the view port. |
 | 1.2.9   | Updated style to display correctly on mobile. added touch move event handling for managing image zoom movement in view port of the preview box. |
