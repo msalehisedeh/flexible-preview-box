@@ -1,0 +1,131 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<div class="resources">
+  <a href="https://www.npmjs.com/package/@sedeh/flexible-preview-box"
+    >npm install &#64;sedeh/flexible-preview-box</a
+  >
+  <p>Tested On Safari, Chrome, Mozilla, and IE11 browsers.</p>
+</div>
+<fieldset class="pick-points">
+  <legend>Options:</legend>
+  <label for="rating">
+    <input 
+      type="checkbox" 
+      name="rating" 
+      id="rating" 
+      [value]="config.rating" 
+      [checked]="config.rating ? true: null" 
+      (click)="click($event, 'rating')" /> 
+    <span>Show rating</span>
+  </label> 
+  <label for="favorite">
+    <input 
+      type="checkbox" 
+      name="favorite" 
+      id="favorite" 
+      [value]="config.favorite" 
+      [checked]="config.favorite ? true: null" 
+      (click)="click($event, 'favorite')" /> 
+    <span>Show favorate</span>
+  </label>  
+  <label for="cart">
+    <input 
+      type="checkbox" 
+      name="cart" 
+      id="cart" 
+      [value]="config.cart" 
+      [checked]="config.cart ? true: null" 
+      (click)="click($event, 'cart')" /> 
+    <span>Show cart</span>
+  </label>  
+  <label for="currency">
+    <input 
+      type="checkbox" 
+      name="currency" 
+      id="currency" 
+      [value]="config.currency" 
+      [checked]="config.currency ? true: null" 
+      (click)="click($event, 'currency')" /> 
+    <span>Show currency</span>
+  </label> 
+  <label for="catalog">
+    <input 
+      type="checkbox" 
+      name="catalog" 
+      id="catalog" 
+      [value]="config.catalog" 
+      [checked]="config.catalog ? true: null" 
+      (click)="click($event, 'catalog')" /> 
+    <span>Show catalog number</span>
+  </label>
+  <label for="inventory">
+    <input 
+      type="checkbox" 
+      name="inventory" 
+      id="inventory" 
+      [value]="config.inventory" 
+      [checked]="config.inventory ? true: null" 
+      (click)="click($event, 'inventory')" /> 
+    <span>Show inventory</span>
+  </label>
+  <label for="description">
+    <input 
+      type="checkbox" 
+      name="description" 
+      id="description" 
+      [value]="config.description" 
+      [checked]="config.description ? true: null" 
+      (click)="click($event, 'description')" /> 
+    <span>Show description</span>
+  </label>  
+  <label for="zoomonhover">
+    <input 
+      type="checkbox" 
+      name="zoomonhover" 
+      id="zoomonhover" 
+      [value]="config.zoomOnHover" 
+      [checked]="config.zoomOnHover ? true: null" 
+      (click)="click($event, 'zoomOnHover')" /> 
+    <span>Zoom on hover</span>
+  </label>  
+  <label for="hovereffect">
+    <input 
+      type="checkbox" 
+      name="hovereffect" 
+      id="hovereffect" 
+      [value]="config.hovereffect" 
+      [checked]="config.hovereffect ? true: null" 
+      (click)="click($event, 'hovereffect')" /> 
+    <span>Hover effect</span>
+  </label>  
+  <label *ngIf="config.zoomOnHover" for="fixedHover">
+    <input 
+      type="checkbox" 
+      name="fixedHover" 
+      id="fixedHover" 
+      [value]="config.fixedHover" 
+      [checked]="config.fixedHover ? true: null" 
+      (click)="click($event, 'fixedHover')" /> 
+    <span>Fixed hover</span>
+  </label> 
+</fieldset>
+
+<div class="items-wrapper">
+  <flexible-preview-box
+    *ngFor="let preview of myPreviews"
+    [item]="preview"
+    [viewport]="preview.images"
+    [metadata]="presentationKeys"
+    [effects]="config"
+    [magnificationFactor]="4"
+    (onaction)="onaction($event)"
+    (onselect)="onselect($event)"></flexible-preview-box>
+</div>
+
+<ul class="logger">
+  <li *ngFor="let x of events" [textContent]="x | json"></li>
+</ul>

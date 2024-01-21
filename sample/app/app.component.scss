@@ -1,0 +1,34 @@
+
+.logger {
+  border: 1px solid #888;
+  background-color: #eee;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: block;
+  max-height: 222px;
+  overflow-y: auto;
+  position: relative;
+}
+.resources {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #551234;
+    font-weight: bold;
+}
+.pick-points {
+  margin: 16px auto 8px auto;
+  border: 2px groove rgba(0, 0, 0, 0.1);
+  height: 46px;
+}
+.items-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 100%;
+  width: 100%;;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+::ng-deep .rating {
+  color: pink !important;
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@sedeh/flexible-preview-box",
+  "version": "3.0.0",
+  "peerDependencies": {
+    "@angular/common": "^15.2.0",
+    "@angular/core": "^15.2.0",
+    "@sedeh/into-pipes": "^4.1.0",
+    "@sedeh/wizard-storage": "^3.0.0",
+    "font-awesome": "^4.7.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

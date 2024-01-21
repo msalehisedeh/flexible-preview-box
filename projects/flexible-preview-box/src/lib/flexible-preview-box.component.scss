@@ -1,0 +1,160 @@
+:host {
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: table;
+  min-height: 50px;
+  padding: 0;
+  border-radius: 5px;
+  margin: 5px;
+  &:focus {
+    border-color: #0ba;
+  }
+  &:hover {
+    .visual-effect {
+      border-color: #800080;
+      box-shadow: 1px 1px 11px #800080;
+    }
+  }
+  ::ng-deep .rating {
+    color: red;
+  }
+
+  ::ng-deep share-component {
+    .off-screen {
+      display: block;
+      float: left;
+      height: 0;
+      overflow: hidden;
+      text-indent: -99999px;
+      width: 0;
+    }
+  }
+
+  .off-screen {
+    display: block;
+    float: left;
+    height: 0;
+    overflow: hidden;
+    text-indent: -99999px;
+    width: 0;
+  }
+
+  .box-row {
+    .label {
+      float: left;
+      font-weight: bold;
+      margin-right: 5px;
+    }
+    .value {
+      float: left;
+      &.full-width {
+        display: block;
+        width: 100%;
+      }
+    }
+    &.link {
+      cursor: pointer;
+    }
+    &.left {
+      text-align: left;
+    }
+    &.right {
+      .label {
+        font-weight: bold;
+        flex: 1;
+        text-align: right;
+      }
+    }
+    &.center {
+      width: inherit;
+      display: table;
+      margin: auto;
+    }
+    &.emphasize {
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+    &.side-by-side {
+      max-width: 250px;
+      display: table;
+      float: right;
+      margin: 0 5px;
+    }
+  }
+  .above-viewport {
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  .viewport {
+    border-color: #800080;
+    box-sizing: border-box;
+    border-top: 1px solid #bcd;
+    border-bottom: 1px solid #bcd;
+    min-height: 100px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    img.content {
+      margin: auto;
+      display: table;
+      pointer-events: none;
+    }
+    video.content {
+      margin: auto;
+      display: table;
+    }
+    .hover {
+      position: absolute;
+      background-color: #fff;
+      top: -10000px;
+      left: -10000px;
+      opacity: 0;
+      pointer-events: none;
+    }
+    &:hover {
+      border-color: #800080;
+      .fixed {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: 1px solid red;
+        width: 400px;
+        height: 400px;
+        z-index: 500;
+        pointer-events: none;
+        .hover {
+          position: fixed;
+          border: 1px solid;
+          border-radius: 4px
+        }
+      }
+    }
+  }
+  .below-viewport {
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  @media screen and (min-width: 600px) {
+  }
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    .viewport, .below-viewport, .above-viewport {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+}
+.clearblock {
+  clear: both;
+  display: block;
+  width: 100%;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+
