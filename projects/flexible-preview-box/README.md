@@ -8,7 +8,9 @@ Have you ever wanted a preview box that can display anything in different ways o
 
 Please send your requests or comments through the link provided below:
 
-[Live Demo](https://flexible-preview-box.stackblitz.io) | [Source code](https://github.com/msalehisedeh/flexible-preview-box/tree/master/src/app) | [Comments/Requests](https://github.com/msalehisedeh/flexible-preview-box/issues)
+[Live Demo](https://flexible-preview-box.stackblitz.io) | 
+[NPM](https://www.npmjs.com/package/@sedeh/flexible-preview-box) | 
+[Comments/Requests](https://github.com/msalehisedeh/flexible-preview-box/issues)
 
 ```
 DEPENDENCIES: 

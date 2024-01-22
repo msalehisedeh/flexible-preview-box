@@ -9,6 +9,21 @@
     "test": "ng test"
   },
   "private": true,
+  "keywords": [
+    "angular 6+",
+    "PEP",
+    "showcase",
+    "responsive",
+    "Product Evaluation Page",
+    "configurable",
+    "Content Preview",
+    "preview Image",
+    "preview Video",
+    "flexible",
+    "ADA compliant",
+    "easy to use",
+    "best"
+  ],
   "dependencies": {
     "@angular/animations": "^15.2.0",
     "@angular/common": "^15.2.0",
