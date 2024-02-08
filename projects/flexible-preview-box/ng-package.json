@@ -4,7 +4,7 @@
   "allowedNonPeerDependencies": [
     "@sedeh/into-pipes",
     "@sedeh/wizard-storage",
-    "ont-awesome"
+    "font-awesome"
   ],
   "lib": {
     "entryFile": "src/public-api.ts"
